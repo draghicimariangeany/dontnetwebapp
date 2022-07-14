@@ -24,7 +24,7 @@ steps:
   inputs:
     command: 'build'
     projects: '**/WebApplication3*.csproj'
-    arguments: '--no-restore'
+    arguments: '--configuration $(buildConfiguration) --no-restore'
   displayName: 'Build projects'
  
 - task: DotNetCoreCLI@2
@@ -32,7 +32,7 @@ steps:
     command: 'publish'
     publishWebProjects: false
     projects: '**/WebApplication3.csproj'
-    arguments: '--configuration $(buildConfiguration) --no-restore'
+    arguments: '--configuration $(buildConfiguration) -o $(Build.ArtifactStagingDirectory)/Output --no-restore'
     modifyOutputPath: false
   displayName: 'Publish WebApplication3'
 - task: AzureWebApp@1
