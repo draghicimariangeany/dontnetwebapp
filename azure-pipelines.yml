@@ -40,5 +40,5 @@ steps:
     azureSubscription: 'AppServiceGeany'
     appType: 'webAppLinux'
     appName: 'MentorshipGeanyAppService'
-    package: '$(Pipeline.Workspace)/**.zip'
+    package: '$(Build.ArtifactStagingDirectory)/Output/**/*.zip'
 
