@@ -35,6 +35,11 @@ steps:
     arguments: '--configuration $(buildConfiguration) -o $(Build.ArtifactStagingDirectory)/Output --no-restore'
     modifyOutputPath: false
   displayName: 'Publish WebApplication3'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
 - task: AzureWebApp@1
   inputs:
     azureSubscription: 'AppServiceGeany'
@@ -42,5 +47,5 @@ steps:
     appName: 'MentorshipGeanyAppService'
     package: '$(Build.ArtifactStagingDirectory)/Output/**/*.zip'
     
-- task: PublishBuildArtifacts@1
+
 
