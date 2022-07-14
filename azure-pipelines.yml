@@ -41,4 +41,6 @@ steps:
     appType: 'webAppLinux'
     appName: 'MentorshipGeanyAppService'
     package: '$(Build.ArtifactStagingDirectory)/Output/**/*.zip'
+    
+- task: PublishBuildArtifacts@1
 
