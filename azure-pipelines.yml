@@ -23,7 +23,7 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
-    projects: 'WebApplication3*.csproj'
+    projects: '**/WebApplication3*.csproj'
     arguments: '--no-restore'
   displayName: 'Build projects'
  
