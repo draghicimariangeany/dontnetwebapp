@@ -17,7 +17,7 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'restore'
-    projects: 'WebApplication3*.csproj'
+    projects: '**/WebApplication3*.csproj'
   displayName: 'Restore Nuget Packages'
  
 - task: DotNetCoreCLI@2
