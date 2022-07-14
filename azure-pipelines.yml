@@ -31,7 +31,7 @@ steps:
   inputs:
     command: 'publish'
     publishWebProjects: false
-    projects: 'WebApplication3.csproj'
+    projects: '**/WebApplication3.csproj'
     arguments: '--configuration $(buildConfiguration) --no-restore'
     modifyOutputPath: false
   displayName: 'Publish WebApplication3'
